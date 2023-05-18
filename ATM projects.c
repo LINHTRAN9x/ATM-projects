@@ -4,7 +4,7 @@ main() {
 
     int pincode, luachon;
     do {
-        printf("Nhap ma pin 4 so vao :");
+        printf("Xin vui long nhap ma pin 4 so vao day :");
         scanf("%d", &pincode);
 
         if (pincode == 5555) {
@@ -55,7 +55,7 @@ main() {
         } else {
             printf("Quy khach da nhap sai ma pin.Vui long thu lai.");
         }
-            printf("ban co muon quay lai lua chon khong ?(Y?N) :");
+            printf("\nQuy khach co muon tro lai khong ?(Y?N) :");
             scanf(" %c", &luachon);
 
     } while (luachon == 'Y' || luachon == 'y');
