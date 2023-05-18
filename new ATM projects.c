@@ -28,7 +28,7 @@ int main() {
                     scanf("%d", &ruttien);
                     if (ruttien <= sodu) {
                         sodu -= ruttien;
-                        printf("Quy khach da rut %d VND. So du trong tai khoan la %d VND\n", ruttien, sodu);
+                        printf("Quy khach da rut thanh cong %d VND. So du trong tai khoan la %d VND\n", ruttien, sodu);
                     } else {
                         printf("So du trong tai khoan khong du de rut tien.\n");
                     }
@@ -39,42 +39,43 @@ int main() {
                     printf("So du trong tai khoan la 10,000,000 VND. Nhap so tien muon nap: ");
                     scanf("%d", &naptien);
                     sodu += naptien;
-                    printf("Quy khach da nap %d VND. So du trong tai khoan la %d VND\n", naptien, sodu);
+                    printf("Quy khach da nap thanh cong %d VND. So du trong tai khoan la %d VND\n", naptien, sodu);
                     break;
                 }
                 case 3: {
                     int chuyentien;
                     int z=0,q=0;
                     char chon;
-                    int return_code=0;
                     do {
                         printf("Nhap (9 so) tai khoan cua nguoi nhan: ");
                         scanf("%d", &z);
                         if (z == 123456789) {
-                            printf("Thanh cong.tai khoan 12345678(Nguyen Van A).");
-                            printf("\n1.Dong y chuyen tien");
-                            printf("\n2.Tu choi chuyen tien\n");
-                            scanf("%d", &q);
+                            printf("Thanh cong.Tai khoan 12345678(Nguyen Van A).\n");
+                            printf("1.Dong y chuyen tien\n");
+                            printf("2.Tu choi chuyen tien\n");
+                            scanf(" %d", &q);
                             if (q == 1) {
                                 printf("So du trong tai khoan la 10,000,000 VND. Nhap so tien muon chuyen: ");
                                 scanf("%d", &chuyentien);
                                 if (chuyentien <= sodu) {
                                     sodu -= chuyentien;
-                                    printf("Quy khach da chuyen %d VND thanh cong. So du trong tai khoan hien tai la %d VND\n",
+                                    printf("Quy khach da chuyen thanh cong %d VND thanh cong. So du trong tai khoan hien tai la %d VND\n",
                                            chuyentien, sodu);
                                 } else {
                                     printf("So du khong du de chuyen tien.\n");
                                 }
                                 break;
+                            } else {
+                                printf("Chuyen tien bi tu choi.\n");
+                                break;
                             }
-
-
-                        } else
-                            printf("\nKhong tim thay tai khoan nao.");
-                            printf("\nQuy khach co muon tro lai chuyen tien khong? (Y/N): ");
-                            scanf("%c",&chon);
-
-                    }while (chon== 'Y' || chon== 'y');
+                        } else {
+                            printf("Khong tim thay tai khoan nao.\n");
+                        }
+                        printf("Quy khach co muon tro lai chuyen tien khong? (Y/N): ");
+                        scanf(" %c", &chon);
+                    } while (chon == 'Y' || chon == 'y');
+                    break;
                 }
                 case 4:
                     printf("So du trong tai khoan cua quy khach la: %d VND\n", sodu);
