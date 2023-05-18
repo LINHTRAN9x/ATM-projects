@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 int main() {
-    int pincode, luachon;
+    int pincode;
+    char luachon;
     int sodu = 10000000;
 
     do {
