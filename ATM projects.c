@@ -1,65 +1,73 @@
 #include <stdio.h>
 
-main() {
-
+int main() {
     int pincode, luachon;
+    int sodu = 10000000;
+
     do {
-        printf("Xin vui long nhap ma pin 4 so vao day :");
+        printf("Xin vui long nhap ma pin (4 so) vao day: ");
         scanf("%d", &pincode);
 
         if (pincode == 5555) {
-            printf("Quy khach da dang nhap thanh cong.Vui long chon cac so duoi day.");
-            printf("\nMENU");
-            printf("\n1.Rut tien");
-            printf("\n2.Nap tien");
-            printf("\n3.Chuyen tien");
-            printf("\n4.Kiem tra so du");
+            printf("Quy khach da dang nhap thanh cong. Vui long chon cac so duoi day.\n");
+            printf("MENU\n");
+            printf("1. Rut tien\n");
+            printf("2. Nap tien\n");
+            printf("3. Chuyen tien\n");
+            printf("4. Kiem tra so du\n");
+
             int choise;
-            int sodu = 10000000;
-            printf("\nNhap lua chon cua ban :");
+            printf("Nhap lua chon cua ban: ");
             scanf("%d", &choise);
 
-
             switch (choise) {
-                case 1:
-                    int ruttien, a;
-                    printf("So du trong tai khoan la 10000000vnd.Nhap so tien muon rut :");
+                case 1: {
+                    int ruttien;
+                    printf("So du trong tai khoan la 10,000,000 VND. Nhap so tien muon rut: ");
                     scanf("%d", &ruttien);
-                    a = sodu - ruttien;
-                    printf("Quy khach da rut %d vnd.So du trong tai khoan la %d vnd", ruttien, a);
+                    if (ruttien <= sodu) {
+                        sodu -= ruttien;
+                        printf("Quy khach da rut %d VND. So du trong tai khoan la %d VND\n", ruttien, sodu);
+                    } else {
+                        printf("So du trong tai khoan khong du de rut tien.\n");
+                    }
                     break;
-                case 2:
-                    int naptien, b;
-                    printf("So du trong tai khoan la 10000000vnd.Nhap so tien muon nap :");
+                }
+                case 2: {
+                    int naptien;
+                    printf("So du trong tai khoan la 10,000,000 VND. Nhap so tien muon nap: ");
                     scanf("%d", &naptien);
-                    b = sodu + naptien;
-                    printf("Quy khach da nap %d vnd.So du trong tai khoan la %d vnd", naptien, b);
+                    sodu += naptien;
+                    printf("Quy khach da nap %d VND. So du trong tai khoan la %d VND\n", naptien, sodu);
                     break;
-                case 3:
-                    int chuyentien, c;
-                    printf("So du trong tai khoan la 10000000vnd.Nhap so tien muon chuyen :");
+                }
+                case 3: {
+                    int chuyentien;
+                    printf("So du trong tai khoan la 10,000,000 VND. Nhap so tien muon chuyen: ");
                     scanf("%d", &chuyentien);
-                    c = sodu - chuyentien;
-                    printf("Quy khach da chuyen %d vnd thanh cong.So du trong tai khoan hien tai la %d", chuyentien, c);
+                    if (chuyentien <= sodu) {
+                        sodu -= chuyentien;
+                        printf("Quy khach da chuyen %d VND thanh cong. So du trong tai khoan hien tai la %d VND\n", chuyentien, sodu);
+                    } else {
+                        printf("So du khong du de chuyen tien.\n");
+                    }
                     break;
+                }
                 case 4:
-                    int;
-
-                    printf("So du trong tai khoan cua quy khach la :%d vnd", sodu);
+                    printf("So du trong tai khoan cua quy khach la: %d VND\n", sodu);
                     break;
                 default:
-                    printf("Lua chon khong hop le");
+                    printf("Lua chon khong hop le\n");
                     break;
-
             }
         } else {
-            printf("Quy khach da nhap sai ma pin.Vui long thu lai.");
+            printf("Quy khach da nhap sai ma pin. Vui long thu lai.\n");
         }
-            printf("\nQuy khach co muon tro lai khong ?(Y?N) :");
-            scanf(" %c", &luachon);
 
+        printf("Quy khach co muon tro lai khong? (Y/N): ");
+        scanf(" %c", &luachon);
     } while (luachon == 'Y' || luachon == 'y');
 
+ 
 }
-
 
