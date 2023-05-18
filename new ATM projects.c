@@ -4,7 +4,7 @@ int main() {
     int pincode;
     char luachon;
     int sodu = 10000000;
-
+    int sodu_goc = sodu;
     do {
         printf("Xin vui long nhap ma pin (4 so) vao day: ");
         scanf("%d", &pincode);
